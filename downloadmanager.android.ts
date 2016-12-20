@@ -38,11 +38,11 @@ export class DownloadManager {
     private handleDownloadEvent(context: android.content.Context, intent: android.content.Intent) {                
         var query = new android.app.DownloadManager.Query();        
         var id = intent.getExtras().getLong(android.app.DownloadManager.EXTRA_DOWNLOAD_ID);
-        // Nope we can't filter the query, it gives weird exceptions.
-        // I mean the logical step would be
+        // Todo: Add a filter and remove the loop.
+        // https://github.com/NativeScript/android-runtime/issues/469 Explains this
+        // Apparently since its vargargs instead of         
         // query.setFilterById(id);  or  query.setFilterById(long(id));
-        // But that will drop crazy stuff like Error: ��� ��� 
-        // I should rise a Nativescript Issue about it.
+        // one has to pass query.setFilterById(id,[]); ran a quick test and it worked
         var c = this.manager.query(query);
         while (c.moveToNext()) {
             if (c.getLong(c.getColumnIndex(android.app.DownloadManager.COLUMN_ID)) == id) {
