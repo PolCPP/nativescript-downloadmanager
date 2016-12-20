@@ -1,6 +1,6 @@
 # Nativescript DownloadManager
 
-DownloadManager is a library that allows downloading files from Nativescript in Android using the Android Download Manager. Why not use Http.getFile() ? Pretty much because as i see it it's pretty much broken if you want to download something thats not [just a few kilobytes](https://github.com/NativeScript/NativeScript/issues/3314/).
+DownloadManager is a library that allows downloading files from Nativescript in Android using the Android Download Manager. Why not use Http.getFile() ? Pretty much because as i see it iss pretty much broken if you want to download something thats not [just a few kilobytes](https://github.com/NativeScript/NativeScript/issues/3314/).
 
 ## Installing
 
