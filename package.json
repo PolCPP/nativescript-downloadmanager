@@ -1,0 +1,41 @@
+{
+  "name": "nativescript-downloadmanager",
+  "version": "0.1.0",
+  "description": "A small library to interact with android DownloadManager.",
+  "main": "downloadmanager",
+  "typings": "index.d.ts",
+  "nativescript": {
+    "platforms": {
+      "android": "2.3.0"
+    }
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PolCPP/nativescript-downloadmanager.git"
+  },
+  "keywords": [
+    "NativeScript",
+    "JavaScript",
+    "Android",
+    "Download",
+    "Http"
+  ],
+  "author": {
+    "name": "Pol Cámara",
+    "email": "polcmara@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/PolCPP/nativescript-downloadmanager/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/PolCPP/nativescript-downloadmanager",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "tns-core-modules": "^2.3.0",
+    "tns-platform-declarations": "^2.3.0",
+    "typescript": "^2.0.7"
+  }
+}

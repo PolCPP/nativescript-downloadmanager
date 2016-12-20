@@ -1,0 +1,105 @@
+{
+  "name": "tns-template-hello-world-ts",
+  "main": "app.js",
+  "version": "2.4.0",
+  "author": {
+    "name": "Telerik",
+    "email": "support@telerik.com"
+  },
+  "description": "Nativescript hello-world-ts project template",
+  "license": "Apache-2.0",
+  "keywords": [
+    "telerik",
+    "mobile",
+    "nativescript",
+    "{N}",
+    "tns",
+    "appbuilder",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/NativeScript/template-hello-world-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NativeScript/template-hello-world-ts/issues"
+  },
+  "homepage": "https://github.com/NativeScript/template-hello-world-ts",
+  "android": {
+    "v8Flags": "--expose_gc"
+  },
+  "dependencies": {
+    "nativescript-theme-core": "^0.2.1"
+  },
+  "devDependencies": {
+    "nativescript-dev-typescript": "^0.3.2",
+    "nativescript-dev-android-snapshot": "^0.*.*"
+  },
+  "_id": "tns-template-hello-world-ts@2.4.0",
+  "_shasum": "2229b3fa50034532aa21b15643a937a9bd7a4a4f",
+  "_resolved": "https://registry.npmjs.org/tns-template-hello-world-ts/-/tns-template-hello-world-ts-2.4.0.tgz",
+  "_from": "tns-template-hello-world-ts@latest",
+  "scripts": {},
+  "_npmVersion": "3.10.3",
+  "_nodeVersion": "6.7.0",
+  "_npmUser": {
+    "name": "tns-bot",
+    "email": "nativescript@telerik.com"
+  },
+  "dist": {
+    "shasum": "2229b3fa50034532aa21b15643a937a9bd7a4a4f",
+    "tarball": "https://registry.npmjs.org/tns-template-hello-world-ts/-/tns-template-hello-world-ts-2.4.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "enchev",
+      "email": "vladimir.enchev@gmail.com"
+    },
+    {
+      "name": "erjangavalji",
+      "email": "erjan.gavalji@gmail.com"
+    },
+    {
+      "name": "fatme",
+      "email": "hfatme@gmail.com"
+    },
+    {
+      "name": "hamorphis",
+      "email": "rossen.hristov@progress.com"
+    },
+    {
+      "name": "hdeshev",
+      "email": "hristo@deshev.com"
+    },
+    {
+      "name": "kerezov",
+      "email": "d.kerezov@gmail.com"
+    },
+    {
+      "name": "nsndeck",
+      "email": "nedyalko.nikolov@telerik.com"
+    },
+    {
+      "name": "rosen-vladimirov",
+      "email": "rosen.vladimirov.91@gmail.com"
+    },
+    {
+      "name": "teobugslayer",
+      "email": "teobugslayer@gmail.com"
+    },
+    {
+      "name": "tns-bot",
+      "email": "nativescript@telerik.com"
+    },
+    {
+      "name": "valio.stoychev",
+      "email": "valio.stoychev@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/tns-template-hello-world-ts-2.4.0.tgz_1479302647141_0.5012668129056692"
+  },
+  "directories": {},
+  "readme": "ERROR: No README data found!"
+}
