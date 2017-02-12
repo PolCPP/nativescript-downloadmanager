@@ -1,4 +1,13 @@
+/// <reference path="./node_modules/tns-platform-declarations/android.d.ts" />
 import * as Application from "application"
+import definition = require("./downloadmanager");
+
+export enum notificationVisibility {
+    VISIBILITY_HIDDEN = 2, //This download doesn't show in the UI or in the notifications.requires the permission android.permission.DOWNLOAD_WITHOUT_NOTIFICATION.
+    VISIBILITY_VISIBLE = 0, //This download is visible but only shows in the notifications while it's in progress. 
+    VISIBILITY_VISIBLE_NOTIFY_COMPLETED = 1, //This download is visible and shows in the notifications while in progress and after completion. 
+    // VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION = 3 /*This download shows in the notifications after completion ONLY. It is usuable only with addCompletedDownload(String, String, boolean, String, String, long, boolean). */
+}
 
 export class DownloadManager {
     
@@ -11,19 +20,54 @@ export class DownloadManager {
         this.registerBroadcast();
     }
             
-    public downloadFile(url: string, cb: Function, directory = "downloads", filename?: string, title?: string, description?: string) {
-        if (!filename) {
-            filename = url.substring(url.lastIndexOf('/') + 1);
-        }
-        if (!title) {
-            title = filename;
-        }
+    public downloadFile(url: string,options:definition.DownloadOptions, cb: Function) {
+        let directory = options.directory ? options.directory : 'downloads';
+
+        let filename = options.filename ? options.filename : url.substring(url.lastIndexOf('/') + 1);
+        let title = options.title ? options.title: filename;
+
         let uri = android.net.Uri.parse(url);
         let req = new android.app.DownloadManager.Request(uri);       
+
         req.setDestinationInExternalFilesDir(Application.android.context, directory, filename);                
 
         req.setTitle(title);
-        req.setDescription(description)                        
+
+        if(options.description)
+            req.setDescription(options.description)                        
+
+        if(options.header){
+            let header = options.header.header
+            let value = options.header.value;
+            req.addRequestHeader(header,value);
+        }
+
+        if(options.allowScanningByMediaScanner)
+            req.allowScanningByMediaScanner();
+
+        if(options.disallowOverMetered)
+            req.setAllowedOverMetered(false);
+        
+        if(options.disallowOverRoaming)
+            req.setAllowedOverRoaming(false);
+
+        if(options.mimeType)
+            req.setMimeType(options.mimeType);
+        
+        if(options.notificationVisibility != undefined)
+            req.setNotificationVisibility(options.notificationVisibility);
+        
+        if(options.hideInDownloadsUi)
+            req.setVisibleInDownloadsUi(false);    
+
+        /*API 24
+        if(options.requiresCharging)
+            req.setRequiresCharging(true);
+        
+        if(options.requiresDeviceIdle)
+            req.setRequiresDeviceIdle(true);
+        
+        */
 
         let id = this.manager.enqueue(req);
         this.downloads.set(id, cb);
