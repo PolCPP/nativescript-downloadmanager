@@ -1,1 +1,1 @@
-export * from './downloadmanager.android';
+export * from './downloadmanager';
